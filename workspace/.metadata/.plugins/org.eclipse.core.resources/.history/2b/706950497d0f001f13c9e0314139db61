@@ -1,5 +1,6 @@
 package com.CPT.Entities;
 
+import com.CPT.Dao.NguoiDungDao.VaiTro;
 
 public class NguoiDung {
 	private int id;
@@ -16,7 +17,8 @@ public class NguoiDung {
 		
 	}
 
-		
+	
+	
 	public int getId() {
 		return id;
 	}

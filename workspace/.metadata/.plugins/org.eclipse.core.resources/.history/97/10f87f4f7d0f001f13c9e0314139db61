@@ -16,7 +16,8 @@ public class NguoiDung {
 		
 	}
 
-		
+	
+	
 	public int getId() {
 		return id;
 	}

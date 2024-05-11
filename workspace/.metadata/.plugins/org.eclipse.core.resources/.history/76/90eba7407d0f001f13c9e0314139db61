@@ -63,5 +63,28 @@ public class NguoiDungDaoImpl implements NguoiDungDao {
 //		return nd;
 //	}
 
-	
+	@Override
+	public NguoiDung findByEmail(String email) {
+		NguoiDung nd = null;
+	    String sql = "SELECT * from ";
+	    try {
+	        PreparedStatement ps = conn.prepareStatement(sql);
+	        ps.setString(1, email);
+	        ResultSet r = ps.executeQuery();
+	        if (r.next()) {
+	            nd = new NguoiDung();
+	            nd.setId(r.getInt("id"));
+	            nd.setEmail(r.getString("email"));
+	            nd.setMatkhau("mat_khau");
+	            VaiTro vaiTro = new VaiTro();
+	            vaiTro.setTenVaiTro(r.getString("ten_vai_tro"));
+	            nd.setVaiTro(vaiTro);
+	        }
+	        r.close();
+	        ps.close();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    return nd;
+	}
 }

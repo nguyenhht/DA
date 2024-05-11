@@ -1,5 +1,6 @@
 package com.CPT.Entities;
 
+import com.CPT.Dao.NguoiDungDao.VaiTro;
 
 public class NguoiDung {
 	private int id;
@@ -9,14 +10,21 @@ public class NguoiDung {
 	private String diachi;
 	private String matkhau;
 	private int vaitroid;
-	
+	private VaiTro vaitro;
 	
 	public NguoiDung() {
 		super();
 		
 	}
 
-		
+	public void setVaiTro(VaiTro vaitro) {
+        this.vaitro = vaitro;
+    }
+
+    public VaiTro getVaiTro() {
+        return vaitro;
+    }
+	
 	public int getId() {
 		return id;
 	}

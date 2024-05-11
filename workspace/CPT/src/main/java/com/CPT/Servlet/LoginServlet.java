@@ -31,52 +31,13 @@ public class LoginServlet extends HttpServlet{
 		
 		
 		HttpSession session = req.getSession();
-		String role = "";
-		if(email.equals("tungta@gmail.com")) {
-			role = "admin";
-		}else {
-			role = "user";
-		}
 		
 		
-		if(role.equals("admin")) {
-			session.setAttribute("fMsg", role);
-			resp.sendRedirect("admin/homeAdmin.jsp");
-		}else if (role.equals("user")) {
-			session.setAttribute("fMsg", role);
-			resp.sendRedirect("index.jsp");
-		}
-		else {
-			session.setAttribute("fMsg", "tài hoản mật khẩu sai");
-			resp.sendRedirect("login.jsp");
-		}
 		
-//		NguoiDung nds = authenticate(email, password);
-//	    if (nds != null && nds.getVaiTro() != null && nds.getVaiTro().getTenVaiTro().equals("1")) {
-//	        session.setAttribute("fMsg", nds);
-//	        resp.sendRedirect("admin/homeAdmin.jsp");
-//	    } else {
-//	        if (nds != null) {
-//	            session.setAttribute("fMsg", nds);
-//	            resp.sendRedirect("index.jsp");
-//	        } else {
-//	            session.setAttribute("fMsg", "");
-//	            resp.sendRedirect("login.jsp");
-//	        }
-//	    }
 	    
 	}
 
-//	private NguoiDung authenticate(String email, String password) {
-//		NguoiDungDaoImpl udi = new NguoiDungDaoImpl(DBConnect.getConnect());
-//		NguoiDung nds = udi.findByEmail(email);
-//		
-//		if (nds != null && nds.getEmail().equals(email)) {
-//		    return nds; 
-//		} else {
-//		    return null; 
-//		}
-//	}
+
 
 	
 	
